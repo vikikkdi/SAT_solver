@@ -17,6 +17,8 @@ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FO
 DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT
 OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 **************************************************************************************************/
+#ifndef __SYSTEM_CC_FILE__
+#define __SYSTEM_CC_FILE__
 
 #include "System.h"
 
@@ -92,4 +94,6 @@ double Glucose::memUsed(void) {
 #else
 double Glucose::memUsed() { 
     return 0; }
+#endif
+
 #endif

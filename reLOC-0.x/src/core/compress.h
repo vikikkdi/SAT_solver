@@ -355,8 +355,8 @@ namespace sReloc
 	sMultirobotSolutionCompressor(const sString &minisat_path,
 				      int            minisat_timeout       = MINISAT_TIMEOUT_UNDEFINED,
 				      int            total_timeout         = TOTAL_TIMEOUT_UNDEFINED,
-				      int            makespan_upper_bound  = sDEFAULT_MINISAT_UPPER_BOUND,
-	                              int            N_parallel_Threads    = sDEFAULT_N_PARALLEL_THREADS,
+				      int            makespan_upper_bound  = 16,
+	                              int            N_parallel_Threads    = 4,
 				      Encoding       encoding              = ENCODING_INVERSE);
 
 	void set_Ratio(double ratio);

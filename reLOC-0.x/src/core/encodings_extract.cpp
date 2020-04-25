@@ -15,7 +15,8 @@
 // procedures for solution extraction.
 //
 /*----------------------------------------------------------------------------*/
-
+#ifndef __ENCODINGS_EXTRACT_CPP__
+#define __ENCODINGS_EXTRACT_CPP__
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
@@ -13214,3 +13215,4 @@ namespace sReloc
 /*----------------------------------------------------------------------------*/
 
 } // namespace sReloc
+#endif

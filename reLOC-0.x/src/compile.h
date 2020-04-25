@@ -13,7 +13,7 @@
 //
 //
 //
-// Compilation configuration file for reLOC package - debugging variant.
+// Compilation configuration file for reLOC package - optimized variant.
 //
 /*----------------------------------------------------------------------------*/
 
@@ -26,7 +26,7 @@
 namespace sReloc
 {
 
-#define sDEBUG      1
+//#define sDEBUG      1
 #define sVERBOSE    1
 #define sSTATISTICS 1
 

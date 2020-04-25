@@ -50,7 +50,7 @@ namespace sReloc
 	static const int VACANT_VERTEX = 0; /* Robots are numbered starting with 1 */
 	static const int UNDEFINED_LOCATION = -1;
 
-	static const int RANDOM_WALK_LENGTH = sDEFAULT_RANDOM_WALK_LENGTH;
+	static const int RANDOM_WALK_LENGTH = 1048576;
 
     public:
 	typedef std::vector<int> Robots_vector;
@@ -110,6 +110,10 @@ namespace sReloc
 
 	virtual sResult to_File_multirobot(const sString &filename, const sString &indent = "") const;
 	virtual void to_Stream_multirobot(FILE *fw, const sString &indent = "") const;
+
+	virtual bool from_vector_initial(const std::vector<std::pair<int, int> > &starts, const int &x, const int &y);
+
+	virtual bool from_vector_goal(const std::vector<std::pair<int, int> > &goals, const int &x, const int &y);
 
 	virtual sResult from_File_multirobot(const sString &filename, int component = 0);
 	virtual sResult from_Stream_multirobot(FILE *fr, int component = 0);
@@ -182,6 +186,7 @@ namespace sReloc
 	virtual void to_Stream_multirobot(FILE *fw, const sString &indent = "") const;
 	virtual void to_Stream_multirobot(FILE *fw, const Robots_set &robot_IDs, const sString &indent = "") const;
 
+	virtual bool from_vector_goal(const std::vector<std::pair<int, int> > &goals, const int &x, const int &y);
 	virtual sResult from_File_multirobot(const sString &filename, int component = 0);
 	virtual sResult from_Stream_multirobot(FILE *fr, int component = 0);
 	virtual sResult from_Stream_multirobot(FILE *fr, Robots_set &robot_IDs);

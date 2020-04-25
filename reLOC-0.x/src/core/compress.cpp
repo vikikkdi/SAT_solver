@@ -14,6 +14,9 @@
 // Compression tools for relocation problem solutions.
 //
 /*----------------------------------------------------------------------------*/
+#ifndef __COMPRESS_CPP__
+#define __COMPRESS_CPP__
+
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -7521,7 +7524,7 @@ namespace sReloc
 	{
 	    if (*solver != NULL)
 	    {
-		delete *solver;
+		//delete *solver;
 	    }
 	    *solver = new Glucose::Solver;
 
@@ -14080,8 +14083,8 @@ namespace sReloc
 	int expansion_count;
 	sMultirobotEncodingContext_CNFsat final_encoding_context;
 	sMultirobotInstance instance(environment, sparse_environment, start_arrangement, final_arrangement, m_ratio, m_robustness, m_range);
-	
 	result = incompute_OptimalCost(solver, instance, max_total_cost, optimal_cost, expansion_count, final_encoding_context, thread_id);
+
 	if (sFAILED(result))
 	{
 	    return result;
@@ -21901,3 +21904,5 @@ namespace sReloc
 /*----------------------------------------------------------------------------*/
 
 } // namespace sReloc
+
+#endif

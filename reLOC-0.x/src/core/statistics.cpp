@@ -14,7 +14,8 @@
 // Statistical data collection and analytical tools.
 //
 /*----------------------------------------------------------------------------*/
-
+#ifndef __STATISTICS_CPP__
+#define __STATISTICS_CPP__
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -888,3 +889,4 @@ po	sUndirectedGraph::VertexIDs_vector source_IDs;
 /*----------------------------------------------------------------------------*/
 
 } // namespace sReloc
+#endif

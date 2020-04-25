@@ -14,7 +14,8 @@
 // Algorithmic graph theory.
 //
 /*----------------------------------------------------------------------------*/
-
+#ifndef __GRAPH_CPP__
+#define __GRAPH_CPP__
 #include "config.h"
 #include "compile.h"
 #include "defs.h"
@@ -749,3 +750,4 @@ namespace sReloc
 /*----------------------------------------------------------------------------*/
 
 } // namespace sReloc
+#endif

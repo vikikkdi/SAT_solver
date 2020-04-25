@@ -14,7 +14,8 @@
 // Multi-robot path-finding encodings derived from the standard MDD encoding.
 //
 /*----------------------------------------------------------------------------*/
-
+#ifndef __ENCODINGS_DERIVED_CPP__
+#define __ENCODINGS_DERIVED_CPP__
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -3348,3 +3349,4 @@ namespace sReloc
 /*----------------------------------------------------------------------------*/
 
 } // namespace sReloc
+#endif
