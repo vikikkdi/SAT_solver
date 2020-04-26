@@ -358,7 +358,7 @@ namespace sReloc
     
 	virtual void setup_Solver(sAstarHeuristic *heuristic,
 				  int              window_size = WINDOW_SIZE_UNDEFINED,
-				  int              max_N_Iterations = sDEFAULT_N_WHCA_ITERATIONS);
+				  int              max_N_Iterations = 128);
 
 	virtual void setup_Instance(const sMultirobotInstance &multirobot_instnace);
 	virtual bool solve_Instance(sMultirobotSolution &multirobot_solution);

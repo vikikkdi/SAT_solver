@@ -14,10 +14,12 @@
 // Relocation problem solving package - original development source.
 //
 /*----------------------------------------------------------------------------*/
-
+#ifndef __RELOC_CPP__
+#define __RELOC_CPP__
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <algorithm>
 
 #include "config.h"
 #include "compile.h"
@@ -2554,7 +2556,24 @@ namespace sReloc
 	fprintf(fw, "%s]\n", indent.c_str());
     }
 
-
+    bool sUndirectedGraph::from_vector(std::vector<std::pair<int, int> > obstacles, std::vector<std::pair<int, int> > goals, std::vector<std::pair<int, int> > starts, int x, int y, std::vector<std::vector<int> > graph){
+	m_Vertices.clear();
+	m_Edges.clear();
+	for(int i=0; i<x; i++){
+		for(int j=0; j<y; j++){
+			int xy = i*y + j;
+			m_Vertices.push_back(sVertex(xy));
+		}
+	}
+	int cnt = 0;
+	for(auto it=graph.begin(); it!=graph.end(); it++){
+		for(auto it2=it->begin(); it2!=it->end(); it2++){
+			add_Edge(cnt, *(it2));
+		}
+		cnt++;
+	}
+	return true;
+    }
     sResult sUndirectedGraph::from_File_multirobot(const sString &filename)
     {
 	sResult result;
@@ -3419,3 +3438,4 @@ namespace sReloc
 /*----------------------------------------------------------------------------*/
 
 } // namespace sReloc
+#endif

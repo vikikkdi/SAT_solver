@@ -17,6 +17,9 @@ DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
 OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 **************************************************************************************************/
 
+#ifndef __OPTIONS_CC__
+#define __OPTIONS_CC__
+
 #include "Sort.h"
 #include "Options.h"
 #include "ParseUtils.h"
@@ -90,4 +93,6 @@ void Glucose::printUsageAndExit (int, char** argv, bool verbose)
     fprintf(stderr, "\n");
     exit(0);
 }
+
+#endif
 

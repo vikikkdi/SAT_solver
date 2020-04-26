@@ -378,7 +378,7 @@ class CMap
     void moveTo(CMap& other){ map.moveTo(other.map); }
 
     // TMP debug:
-    void debug(){
+    void debug1(){
         printf(" --- size = %d, bucket_count = %d\n", size(), map.bucket_count()); }
 };
 

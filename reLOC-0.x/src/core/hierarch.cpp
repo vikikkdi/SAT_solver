@@ -14,7 +14,8 @@
 // Hierarchical version of relocation problem.
 //
 /*----------------------------------------------------------------------------*/
-
+#ifndef __HIERARCH_CPP__
+#define __HIERARCH_CPP__
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
@@ -609,3 +610,4 @@ namespace sReloc
 /*----------------------------------------------------------------------------*/
 
 } // namespace sReloc
+#endif

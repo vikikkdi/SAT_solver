@@ -14,7 +14,8 @@
 // Search-based solving of multi-robot path-finding problem.
 //
 /*----------------------------------------------------------------------------*/
-
+#ifndef __SEARCH_CPP__
+#define __SEARCH_CPP__
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
@@ -2388,3 +2389,4 @@ namespace sReloc
 /*----------------------------------------------------------------------------*/
 
 } // namespace sReloc
+#endif

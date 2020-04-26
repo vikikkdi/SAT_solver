@@ -15,7 +15,8 @@
 // MDDs and calculating cost-optimal solutions.
 //
 /*----------------------------------------------------------------------------*/
-
+#ifndef __ENCODINGS_MDD_CPP__
+#define __ENCODINGS_MDD_CPP__
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -25982,3 +25983,4 @@ namespace sReloc
 /*----------------------------------------------------------------------------*/
 
 } // namespace sReloc
+#endif

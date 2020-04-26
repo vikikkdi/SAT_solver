@@ -15,7 +15,8 @@
 // binary state variable representation.
 //
 /*----------------------------------------------------------------------------*/
-
+#ifndef __ENCODINGS_BINARY_CPP__
+#define __ENCODINGS_BINARY_CPP__
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
@@ -3600,3 +3601,4 @@ namespace sReloc
 /*----------------------------------------------------------------------------*/
 
 } // namespace sReloc
+#endif

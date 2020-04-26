@@ -14,7 +14,8 @@
 // Fragments of complete polynomial time algorithms.
 //
 /*----------------------------------------------------------------------------*/
-
+#ifndef __COMPLETE_CPP__
+#define __COMPLETE_CPP__
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
@@ -1668,3 +1669,4 @@ namespace sReloc
 /*----------------------------------------------------------------------------*/
 
 } // namespace sReloc
+#endif

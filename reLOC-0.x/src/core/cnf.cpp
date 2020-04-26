@@ -14,6 +14,8 @@
 // Dimacs CNF formula production tools.
 //
 /*----------------------------------------------------------------------------*/
+#ifndef __CNF_CPP__
+#define __CNF_CPP__
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -9012,3 +9014,4 @@ namespace sReloc
 /*----------------------------------------------------------------------------*/
 
 } // namespace sReloc
+#endif

@@ -14,7 +14,8 @@
 // Multirobot coordinated path-finding solving package.
 //
 /*----------------------------------------------------------------------------*/
-
+#ifndef __MULTIROBOT_CPP__
+#define __MULTIROBOT_CPP__
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
@@ -876,6 +877,35 @@ namespace sReloc
 	}
     }
 
+	bool sRobotArrangement::from_vector_initial(const std::vector<std::pair<int, int> > &starts, const int &x, const int &y){
+		m_robot_Locs.clear();
+		m_vertex_Occups.clear();
+		int N_Robots = starts.size();
+		int N_Vertices = x*y;
+		m_robot_Locs.resize(N_Robots+1);
+		m_vertex_Occups.resize(N_Vertices);
+		for(int i=0; i<starts.size(); i++){
+			int v_id = (starts[i].first * y) + starts[i].second;
+			m_robot_Locs[i+1] = v_id;
+			m_vertex_Occups[v_id] = i+1;
+		}
+		return true;			
+	}
+
+		bool sRobotArrangement::from_vector_goal(const std::vector<std::pair<int, int> > &goals,const int&x,  const int &y){
+		m_robot_Locs.clear();
+		m_vertex_Occups.clear();
+		int N_Robots = goals.size();
+		int N_Vertices = x*y;
+		m_robot_Locs.resize(N_Robots+1, (const int)UNDEFINED_LOCATION);
+		m_vertex_Occups.resize(N_Vertices, (const int)VACANT_VERTEX);
+		for(int i=0; i<goals.size(); i++){
+			int v_id = (goals[i].first * y) + goals[i].second;
+			m_robot_Locs[i+1] = v_id;
+			m_vertex_Occups[v_id] = i+1;
+		}
+		return true;			
+	}
 
     sResult sRobotArrangement::from_File_multirobot(const sString &filename, int component)
     {
@@ -1545,9 +1575,30 @@ namespace sReloc
 	fprintf(fw, "}");
     }
 
+    bool sRobotGoal::from_vector_goal(const std::vector<std::pair<int, int> > &goals, const int &x, const int &y){
+	Robots_set all_robot_IDs;
+	m_robot_Goals.clear();
+	m_goal_Compats.clear();
+	int N_Robots = goals.size();
+	int N_Vertices = x*y;
+	m_robot_Goals.resize(N_Robots+1);
+	m_goal_Compats.resize(N_Vertices);
+	for(int i=0; i<goals.size(); i++){
+		int v_id = (goals[i].first * y) + goals[i].second;
+		int r_id = i + 1;	
+		all_robot_IDs.insert(r_id);
+	}
+	for(int i=0; i<goals.size(); i++){
+		int v_id = (goals[i].first * y) + goals[i].second;
+		int r_id = i + 1;	
+		assign_Goal(v_id, r_id);
+	}
+	return true;
+    }
 
     sResult sRobotGoal::from_File_multirobot(const sString &filename, int component)
     {
+	printf("NAAAA\n");
 	sResult result;
 	FILE *fr;
 
@@ -5996,10 +6047,29 @@ namespace sReloc
 	to_Stream(stdout, indent);
     }
 
+    std::map<int, std::vector<std::pair<int, int> > > sMultirobotSolution::get_sol(){
+	std::map<int, std::vector<std::pair<int, int> > > solution;
+	
+	int n_steps = m_Steps.size();
+	for(int i=0; i<n_steps; i++){
+		const Step &step = m_Steps[i];
+		for(Moves_list::const_iterator move = step.m_Moves.begin(); move!=step.m_Moves.end(); ++move){
+			int robot_id = move->m_robot_id;
+			int from_loc = move->m_src_vrtx_id;
+			int to_loc = move->m_dest_vrtx_id;
+			if(solution.find(robot_id) == solution.end()){
+				solution[robot_id] = std::vector<std::pair<int, int> >();
+				solution[robot_id].push_back(make_pair(from_loc,i));
+			}
+			solution[robot_id].push_back(make_pair(to_loc, i+1));
+		}
+	}
+	return solution;
+	}
 
     void sMultirobotSolution::to_Stream(FILE *fw, const sString &indent) const
     {
-	fprintf(fw, "%sMulirobot solution: (|moves| = %d, paralellism = %.3f) [\n", indent.c_str(), m_Moves_cnt, (double)m_Moves_cnt / m_Steps.size());
+	fprintf(fw, "%sMulirobot solution: (|moves1| = %d, paralellism = %.3f) [\n", indent.c_str(), m_Moves_cnt, (double)m_Moves_cnt / m_Steps.size());
 
 	int N_Steps = m_Steps.size();
 	for (int i = 0; i < N_Steps; ++i)
@@ -6026,7 +6096,7 @@ namespace sReloc
 
     void sMultirobotSolution::to_Stream(const sUndirectedGraph &grid, FILE *fw, const sString &indent) const
     {
-	fprintf(fw, "%sMulirobot solution: (|moves| = %d, paralellism = %.3f) [\n", indent.c_str(), m_Moves_cnt, (double)m_Moves_cnt / m_Steps.size());
+	fprintf(fw, "%sMulirobot solution: (|moves2| = %d, paralellism = %.3f) [\n", indent.c_str(), m_Moves_cnt, (double)m_Moves_cnt / m_Steps.size());
 
 	int N_Steps = m_Steps.size();
 	for (int i = 0; i < N_Steps; ++i)
@@ -6418,3 +6488,4 @@ namespace sReloc
 /*----------------------------------------------------------------------------*/
 
 } // namespace sReloc
+#endif

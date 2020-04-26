@@ -326,6 +326,7 @@ namespace sReloc
 	virtual sResult to_File_multirobot(const sString &filename, const sString &indent = "") const;
 	virtual void to_Stream_multirobot(FILE *fw, const sString &indent = "") const;
 
+	virtual bool from_vector(std::vector<std::pair<int, int> > obstacles, std::vector<std::pair<int, int> > goals, std::vector<std::pair<int, int> > starts, int x, int y, std::vector<std::vector<int> > graph);
 	virtual sResult from_File_multirobot(const sString &filename);
 	virtual sResult from_Stream_multirobot(FILE *fr);
 
