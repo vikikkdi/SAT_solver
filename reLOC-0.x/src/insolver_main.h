@@ -98,11 +98,7 @@ namespace sReloc
     
     sResult parse_CommandLineParameter(const sString &parameter, sCommandParameters &parameters);
 
-<<<<<<< HEAD
     sResult solve_MultirobotInstance_SAT(const std::vector<std::pair<int, int> > &obstacles,const  std::vector<std::pair<int, int> > &goals, const std::vector<std::pair<int, int> > &starts, const int &x, const int &y, const std::vector<std::vector<int> > &graph, std::pair<float, std::vector<std::vector<std::tuple<int, int, int> > > > *solution);
-=======
-    sResult solve_MultirobotInstance_SAT(const std::vector<std::pair<int, int> > &obstacles,const  std::vector<std::pair<int, int> > &goals, const std::vector<std::pair<int, int> > &starts, const int &x, const int &y, const std::vector<std::vector<int> > &graph);
->>>>>>> b8a027dc904c96fd76287b931bf0b0c1bd602221
 
 
 /*----------------------------------------------------------------------------*/

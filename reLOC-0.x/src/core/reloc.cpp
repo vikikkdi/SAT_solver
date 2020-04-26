@@ -2559,25 +2559,13 @@ namespace sReloc
     bool sUndirectedGraph::from_vector(std::vector<std::pair<int, int> > obstacles, std::vector<std::pair<int, int> > goals, std::vector<std::pair<int, int> > starts, int x, int y, std::vector<std::vector<int> > graph){
 	m_Vertices.clear();
 	m_Edges.clear();
-<<<<<<< HEAD
 	for(int i=0; i<x; i++){
 		for(int j=0; j<y; j++){
-=======
-	printf("I am after clear\n");
-	for(int i=0; i<x; i++){
-		for(int j=0; j<y; j++){
-			/*if(std::find(obstacles.begin(), obstacles.end(), make_pair(i, j)) != obstacles.end()){
-				continue;
-			}*/
->>>>>>> b8a027dc904c96fd76287b931bf0b0c1bd602221
 			int xy = i*y + j;
 			m_Vertices.push_back(sVertex(xy));
 		}
 	}
-<<<<<<< HEAD
-=======
-	printf("I am about to add edges %d\n", graph.size());
->>>>>>> b8a027dc904c96fd76287b931bf0b0c1bd602221
+
 	int cnt = 0;
 	for(auto it=graph.begin(); it!=graph.end(); it++){
 		for(auto it2=it->begin(); it2!=it->end(); it2++){
@@ -2585,10 +2573,6 @@ namespace sReloc
 		}
 		cnt++;
 	}
-<<<<<<< HEAD
-=======
-	printf("Returning from the function\n");
->>>>>>> b8a027dc904c96fd76287b931bf0b0c1bd602221
 	return true;
     }
     sResult sUndirectedGraph::from_File_multirobot(const sString &filename)
