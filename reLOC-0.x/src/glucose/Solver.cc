@@ -141,7 +141,7 @@ Solver::Solver() :
   , asynch_interrupt   (false)
   , incremental(opt_incremental)
   , nbVarsInitialFormula(INT32_MAX)
-  , s_Glucose_timeout(0.0)
+  , s_Glucose_timeout(600.0)
 {
   MYFLAG=0;  
   // Initialize only first time. Useful for incremental solving, useless otherwise
