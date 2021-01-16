@@ -27,7 +27,7 @@ namespace sReloc
 {
 
 //#define sDEBUG      1
-#define sVERBOSE    1
+//#define sVERBOSE    0
 #define sSTATISTICS 1
 
 

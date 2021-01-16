@@ -882,8 +882,8 @@ namespace sReloc
 		m_vertex_Occups.clear();
 		int N_Robots = starts.size();
 		int N_Vertices = x*y;
-		m_robot_Locs.resize(N_Robots+1);
-		m_vertex_Occups.resize(N_Vertices);
+		m_robot_Locs.resize(N_Robots+1, (const int)UNDEFINED_LOCATION);
+		m_vertex_Occups.resize(N_Vertices, (const int)VACANT_VERTEX);
 		for(int i=0; i<starts.size(); i++){
 			int v_id = (starts[i].first * y) + starts[i].second;
 			m_robot_Locs[i+1] = v_id;

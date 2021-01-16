@@ -1,7 +1,7 @@
 /****************************************************************************************[Solver.h]
  Glucose -- Copyright (c) 2009, Gilles Audemard, Laurent Simon
-				CRIL - Univ. Artois, France
-				LRI  - Univ. Paris Sud, France
+                CRIL - Univ. Artois, France
+                LRI  - Univ. Paris Sud, France
  
 Glucose sources are based on MiniSat (see below MiniSat copyrights). Permissions and copyrights of
 Glucose are exactly the same as Minisat on which it is based on. (see below).
@@ -37,6 +37,7 @@ OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWA
 #include "BoundedQueue.h"
 #include "Constants.h"
 
+#include <boOX_util/boOX_statistics.h>
 
 namespace Glucose {
 
@@ -269,6 +270,12 @@ protected:
     // Variables added for incremental mode
     int incremental; // Use incremental SAT Solver
     int nbVarsInitialFormula; // nb VAR in formula without assumptions (incremental SAT)
+
+public:
+    sDouble s_Glucose_timeout;
+
+//protected:    
+public:
     double totalTime4Sat,totalTime4Unsat;
     int nbSatCalls,nbUnsatCalls;
     vec<int> assumptionPositions,initialPositions;
@@ -463,7 +470,7 @@ inline void Solver::printInitialClause(CRef cr)
   Clause &c = ca[cr];
     for (int i = 0; i < c.size(); i++){
       if(!isSelector(var(c[i]))) {
-	printLit(c[i]);
+    printLit(c[i]);
         printf(" ");
       }
     }

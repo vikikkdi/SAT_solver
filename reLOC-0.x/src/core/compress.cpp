@@ -616,8 +616,8 @@ namespace sReloc
 
 	while (N_Layers >= 2)
 	{
-	    #ifdef sVERBOSE
-	    printf("Solving layer: %d\n", N_Layers);
+	    #ifdef sVERBOSE__
+	    //printf("Solving layer: %d\n", N_Layers);
 	    #endif
 
 	    sMultirobotEncodingContext_CNFsat encoding_context(N_Layers);
@@ -1374,8 +1374,8 @@ namespace sReloc
 	    }
 	    *solver = new Glucose::Solver;
 	    
-	    #ifdef sVERBOSE
-	    printf("Solving layer: %d\n", N_Layers);
+	    #ifdef sVERBOSE__
+	    //printf("Solving layer: %d\n", N_Layers);
 	    #endif
 
 	    sMultirobotEncodingContext_CNFsat encoding_context(N_Layers);
@@ -1623,9 +1623,9 @@ namespace sReloc
 	}
 	*solver = new Glucose::Solver;
 	    
-	#ifdef sVERBOSE
+	#ifdef sVERBOSE__
 	{
-	    printf("Solving layer: %d\n", N_Layers);
+	    //printf("Solving layer: %d\n", N_Layers);
 	}
         #endif
 
@@ -1905,8 +1905,8 @@ namespace sReloc
 	while (N_Layers <= makespan_upper_bound + 1)
 	{
 
-	    #ifdef sVERBOSE
-	    printf("Solving layer: %d\n", N_Layers);
+	    #ifdef sVERBOSE__
+	    //printf("Solving layer: %d\n", N_Layers);
 	    #endif
 
 	    sMultirobotEncodingContext_CNFsat encoding_context(N_Layers);
@@ -2660,8 +2660,8 @@ namespace sReloc
 	}
 	int N_Layers = specified_makespan + 1;
 
-        #ifdef sVERBOSE
-	printf("Solving layer: %d\n", N_Layers);
+        #ifdef sVERBOSE__
+	//printf("Solving layer: %d\n", N_Layers);
         #endif
 
 	sMultirobotEncodingContext_CNFsat encoding_context(N_Layers);
@@ -3414,8 +3414,8 @@ namespace sReloc
 	    }
 	    *solver = new Glucose::Solver;
 
-	    #ifdef sVERBOSE
-	    printf("Solving layer: %d\n", N_Layers);
+	    #ifdef sVERBOSE__
+	    //printf("Solving layer: %d\n", N_Layers);
 	    #endif
 
 	    sMultirobotEncodingContext_CNFsat encoding_context(N_Layers);
@@ -3704,8 +3704,8 @@ namespace sReloc
 	    int makespan_try = last_satisfiable_makespan - (last_satisfiable_makespan - first_unsatisfiable_makespan) / 2;
 	    int N_Layers = makespan_try + 1;
 
-	    #ifdef sVERBOSE
-	    printf("Solving layer: %d\n", N_Layers);
+	    #ifdef sVERBOSE__
+	    //printf("Solving layer: %d\n", N_Layers);
 	    #endif
 
 	    sMultirobotEncodingContext_CNFsat encoding_context(N_Layers);
@@ -4495,8 +4495,8 @@ namespace sReloc
 	    int makespan_try = last_satisfiable_makespan - (last_satisfiable_makespan - first_unsatisfiable_makespan) / 2;
 	    int N_Layers = makespan_try + 1;
 
-	    #ifdef sVERBOSE
-	    printf("Solving layer: %d\n", N_Layers);
+	    #ifdef sVERBOSE__
+	    //printf("Solving layer: %d\n", N_Layers);
 	    #endif
 
 	    sMultirobotEncodingContext_CNFsat encoding_context(N_Layers);
@@ -6959,8 +6959,8 @@ namespace sReloc
 	{
 	    sMultirobotEncodingContext_CNFsat encoding_context(N_Layers);
 
-#ifdef sVERBOSE
-	    printf("Solving layer %d ...\n", N_Layers);
+#ifdef sVERBOSE__
+	    //printf("Solving layer %d ...\n", N_Layers);
 #endif
 	    
 	    switch (m_encoding)
@@ -7199,8 +7199,8 @@ namespace sReloc
 	    *solver = new Glucose::Solver;
 	    
 	    sMultirobotEncodingContext_CNFsat encoding_context(N_Layers);
-#ifdef sVERBOSE
-	    printf("Solving layer %d ...\n", N_Layers);
+#ifdef sVERBOSE__
+	    //printf("Solving layer %d ...\n", N_Layers);
 #endif
 	    
 	    switch (m_encoding)
@@ -7448,8 +7448,8 @@ namespace sReloc
 	    encoding_context.m_max_total_cost = total_cost;
 	    encoding_context.m_max_total_fuel = total_cost;	    
 
-#ifdef sVERBOSE
-	    printf("Solving cost %d (%d) ...\n", total_cost, max_individual_cost);
+#ifdef sVERBOSE__
+	    //printf("Solving cost %d (%d) ...\n", total_cost, max_individual_cost);
 #endif
 
 	    if (sFAILED(result = compute_CostSolvability(instance, total_cost, final_encoding_context, thread_id)))
@@ -7532,8 +7532,8 @@ namespace sReloc
 	    encoding_context.m_max_total_cost = total_cost;
 	    encoding_context.m_max_total_fuel = total_cost;	    
 
-#ifdef sVERBOSE
-	    printf("Solving cost %d (%d) ...\n", total_cost, max_individual_cost);
+#ifdef sVERBOSE__
+	    //printf("Solving cost %d (%d) ...\n", total_cost, max_individual_cost);
 #endif
 
 	    if (sFAILED(result = incompute_CostSolvability(solver, instance, total_cost, final_encoding_context, thread_id)))
@@ -7660,7 +7660,7 @@ namespace sReloc
 	    sMultirobotEncodingContext_CNFsat encoding_context(0);
 	    encoding_context.m_max_total_cost = total_cost;
 
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 	    printf("Solving cost %d (%d) ...\n", total_cost, max_individual_cost);
 #endif
 
@@ -7762,16 +7762,16 @@ namespace sReloc
 	    
 	    encoding_context.m_max_total_fuel = total_fuel;
 
-#ifdef sVERBOSE
-		printf("Solving fuel %d (individual = %d) ...\n", total_fuel, max_individual_fuel);
+#ifdef sVERBOSE__
+		//printf("Solving fuel %d (individual = %d) ...\n", total_fuel, max_individual_fuel);
 #endif	    
 
 	    for (int fuel_makespan_ = max_individual_fuel; fuel_makespan_ <= encoding_context.m_max_total_fuel; ++fuel_makespan_)
 	    {
 		encoding_context.m_fuel_makespan = fuel_makespan_;
 
-#ifdef sVERBOSE
-		printf("  Checking makespan = %d ...\n", fuel_makespan_);
+#ifdef sVERBOSE__
+		//printf("  Checking makespan = %d ...\n", fuel_makespan_);
 #endif	    		
 	    
 		if (sFAILED(result = compute_FuelSolvability(instance, total_fuel, fuel_makespan_, final_encoding_context, thread_id)))
@@ -7850,8 +7850,8 @@ namespace sReloc
 	    sMultirobotEncodingContext_CNFsat encoding_context(0);
 	    encoding_context.m_max_total_fuel = total_fuel;
 
-#ifdef sVERBOSE
-		printf("Solving fuel %d (individual = %d) ...\n", total_fuel, max_individual_fuel);
+#ifdef sVERBOSE__
+		//printf("Solving fuel %d (individual = %d) ...\n", total_fuel, max_individual_fuel);
 #endif	    
 
 	    for (int fuel_makespan_ = max_individual_fuel; fuel_makespan_ <= encoding_context.m_max_total_fuel; ++fuel_makespan_)
@@ -7864,8 +7864,8 @@ namespace sReloc
 		
 		encoding_context.m_fuel_makespan = fuel_makespan_;
 
-#ifdef sVERBOSE
-		printf("  Checking makespan = %d ...\n", fuel_makespan_);
+#ifdef sVERBOSE__
+		//printf("  Checking makespan = %d ...\n", fuel_makespan_);
 #endif	    		
 
 		if (sFAILED(result = incompute_FuelSolvability(solver, instance, total_fuel, fuel_makespan_, final_encoding_context, thread_id)))
@@ -8020,8 +8020,8 @@ namespace sReloc
 	encoding_context.m_max_total_cost = optimal_cost;
 	encoding_context.m_max_total_fuel = optimal_cost;	
 
-#ifdef sVERBOSE
-	printf("Solving avoiding for cost %d ...\n", optimal_cost);
+#ifdef sVERBOSE__
+	//printf("Solving avoiding for cost %d ...\n", optimal_cost);
 #endif
 
 	if (sFAILED(result = compute_CostSolvability_avoid(instance, optimal_cost, blocking_solution, final_encoding_context, thread_id)))
@@ -8070,8 +8070,8 @@ namespace sReloc
 	encoding_context.m_max_total_cost = optimal_cost;
 	encoding_context.m_max_total_fuel = optimal_cost;	
 
-#ifdef sVERBOSE
-	printf("Solving avoiding for cost %d ...\n", optimal_cost);
+#ifdef sVERBOSE__
+	//printf("Solving avoiding for cost %d ...\n", optimal_cost);
 #endif
 
 	if (sFAILED(result = incompute_CostSolvability_avoid(solver, instance, optimal_cost, blocking_solution, final_encoding_context, thread_id)))
@@ -8159,8 +8159,8 @@ namespace sReloc
 
 	sMultirobotEncodingContext_CNFsat encoding_context(optimal_makespan);
 
-#ifdef sVERBOSE
-	printf("Solving avoiding for makespan %d ...\n", optimal_makespan);
+#ifdef sVERBOSE__
+	//printf("Solving avoiding for makespan %d ...\n", optimal_makespan);
 #endif
 
 	if (sFAILED(result = compute_MakespanSolvability_avoid(instance, optimal_makespan, blocking_solution, final_encoding_context, thread_id)))
@@ -8207,8 +8207,8 @@ namespace sReloc
 
 	sMultirobotEncodingContext_CNFsat encoding_context(optimal_makespan);
 
-#ifdef sVERBOSE
-	printf("Solving avoiding for makespan %d ...\n", optimal_makespan);
+#ifdef sVERBOSE__
+	//printf("Solving avoiding for makespan %d ...\n", optimal_makespan);
 #endif
 
 	if (sFAILED(result = incompute_MakespanSolvability_avoid(solver, instance, optimal_makespan, blocking_solution, final_encoding_context, thread_id)))
@@ -8256,8 +8256,8 @@ namespace sReloc
 	encoding_context.m_max_total_cost = total_cost;
 	encoding_context.m_max_total_fuel = total_cost;	
 
-#ifdef sVERBOSE
-	printf("Solving cost %d ...\n", total_cost);
+#ifdef sVERBOSE__
+	//printf("Solving cost %d ...\n", total_cost);
 #endif
 
 	switch (m_encoding)
@@ -8911,8 +8911,8 @@ namespace sReloc
 	encoding_context.m_max_total_cost = total_cost;
 	encoding_context.m_max_total_fuel = total_cost;		
 
-#ifdef sVERBOSE
-	printf("Solving cost %d ...\n", total_cost);
+#ifdef sVERBOSE__
+	//printf("Solving cost %d ...\n", total_cost);
 #endif
 
 	switch (m_encoding)
@@ -9334,8 +9334,8 @@ namespace sReloc
 	encoding_context.m_max_total_cost = total_cost;
 	encoding_context.m_max_total_fuel = total_cost;		
 
-#ifdef sVERBOSE
-	printf("Solving avoid cost %d ...\n", total_cost);
+#ifdef sVERBOSE__
+	//printf("Solving avoid cost %d ...\n", total_cost);
 #endif
 
 	switch (m_encoding)
@@ -9625,8 +9625,8 @@ namespace sReloc
 	encoding_context.m_max_total_cost = total_cost;
 	encoding_context.m_max_total_fuel = total_cost;		
 
-#ifdef sVERBOSE
-	printf("Solving avoid cost %d ...\n", total_cost);
+#ifdef sVERBOSE__
+	//printf("Solving avoid cost %d ...\n", total_cost);
 #endif
 
 	switch (m_encoding)
@@ -9764,8 +9764,8 @@ namespace sReloc
 
 	sMultirobotEncodingContext_CNFsat encoding_context(makespan);
 
-#ifdef sVERBOSE
-	printf("Solving avoid makespan %d ...\n", makespan);
+#ifdef sVERBOSE__
+	//printf("Solving avoid makespan %d ...\n", makespan);
 #endif
 
 	switch (m_encoding)
@@ -9995,8 +9995,8 @@ namespace sReloc
 
 	sMultirobotEncodingContext_CNFsat encoding_context(makespan);
 
-#ifdef sVERBOSE
-	printf("Solving avoid makespan %d ...\n", makespan);
+#ifdef sVERBOSE__
+	//printf("Solving avoid makespan %d ...\n", makespan);
 #endif
 
 	switch (m_encoding)
@@ -10173,8 +10173,8 @@ namespace sReloc
 	    encoding_context.m_max_total_cost = total_cost;
 	    encoding_context.m_max_total_fuel = total_cost;		    
 
-#ifdef sVERBOSE
-	    printf("Solving cost %d ...\n", total_cost);
+#ifdef sVERBOSE__
+	 //   printf("Solving cost %d ...\n", total_cost);
 #endif	    
 	    switch (m_encoding)
 	    {
@@ -10328,8 +10328,8 @@ namespace sReloc
 	    encoding_context.m_max_total_cost = total_cost;
 	    encoding_context.m_max_total_fuel = total_cost;		    
 
-#ifdef sVERBOSE
-	    printf("Solving cost %d ...\n", total_cost);
+#ifdef sVERBOSE__
+	//    printf("Solving cost %d ...\n", total_cost);
 #endif	    
 	    switch (m_encoding)
 	    {
@@ -10597,7 +10597,7 @@ namespace sReloc
 	    sMultirobotEncodingContext_CNFsat encoding_context(0);
 	    encoding_context.m_max_total_cost = total_cost;
 
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 	    printf("Solving cost %d ...\n", total_cost);
 #endif	    
 	    switch (m_encoding)
@@ -13201,8 +13201,8 @@ namespace sReloc
 	    encoding_context.m_max_total_cost = total_cost;
 	    encoding_context.m_max_total_fuel = total_cost;	    
 
-#ifdef sVERBOSE
-	    printf("Solving cost %d ...\n", total_cost);
+#ifdef sVERBOSE__
+	    //printf("Solving cost %d ...\n", total_cost);
 #endif
 	    
 	    switch (m_encoding)
@@ -13472,7 +13472,7 @@ namespace sReloc
 	    encoding_context.m_max_total_cost = total_cost;
 	    encoding_context.m_max_total_fuel = total_cost;	    
 
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 	    printf("Solving cost %d ...\n", total_cost);
 #endif
 	    
@@ -15364,7 +15364,7 @@ namespace sReloc
 	    }
 	}
 
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 	printf("MERGE colors\n");
 	for (int c = 0; c < robot_Groups.size(); ++c)
 	{
@@ -15407,7 +15407,7 @@ namespace sReloc
 	    }
 	}
 
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 	printf("PRE-MERGE\n");
 	print_RobotGroups(robot_Groups);
 	printf("POST-MERGE\n");
@@ -15533,7 +15533,7 @@ namespace sReloc
 	    
 	    for (int g = 0; g < robot_Groups.size(); ++g)
 	    {
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 		printf("Initiating instance for group %d\n", g);
 #endif
 
@@ -15551,7 +15551,7 @@ namespace sReloc
 		group_start_Arrangements.push_back(group_start_arrangement);
 		group_final_Arrangements.push_back(group_final_arrangement);
 
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 		printf("Computing solution for group %d (size:%ld) ...\n", g, robot_Groups[g].size());
 #endif
 		if (group_optimal_Solutions[g].is_Null())
@@ -15590,7 +15590,7 @@ namespace sReloc
 		    }
 		    group_optimal_Solutions[g] = group_optimal_solution;
 			
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 		    printf("Computed group solution cost: %d\n", group_optimal_cost);
 		    group_optimal_solution.to_Screen();
 #endif
@@ -15603,7 +15603,7 @@ namespace sReloc
 		}
 	    }
 
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 	    print_RobotGroups(robot_Groups);
 #endif
 
@@ -15614,7 +15614,7 @@ namespace sReloc
 	    {
 		for (int gB = gA + 1; gB < robot_Groups.size(); ++gB)
 		{
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 		    printf("Checking dependence between groups: %d x %d\n", gA, gB);
 		    group_optimal_Solutions[gA].to_Screen();
 		    group_optimal_Solutions[gB].to_Screen();
@@ -15624,7 +15624,7 @@ namespace sReloc
 							   group_optimal_Solutions[gA],
 							   group_optimal_Solutions[gB]);
 
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 		    if (dependent)
 		    {
 			printf("----> Groups DEPENDENT\n");
@@ -15648,7 +15648,7 @@ namespace sReloc
 					merged_group_optimal_Solutions);
 	    sASSERT(check_RobotGroups(N_Robots, merged_robot_Groups));
 
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 	    print_RobotGroups(merged_robot_Groups);
 #endif
 
@@ -15708,8 +15708,8 @@ namespace sReloc
 	    
 	    for (int g = 0; g < robot_Groups.size(); ++g)
 	    {
-#ifdef sVERBOSE
-		printf("Initiating instance for group %d\n", g);
+#ifdef sVERBOSE__
+		//printf("Initiating instance for group %d\n", g);
 #endif
 
 		sRobotArrangement group_start_arrangement;
@@ -15726,8 +15726,8 @@ namespace sReloc
 		group_start_Arrangements.push_back(group_start_arrangement);
 		group_final_Arrangements.push_back(group_final_arrangement);
 
-#ifdef sVERBOSE
-		printf("Computing solution for group %d (size:%ld) ...\n", g, robot_Groups[g].size());
+#ifdef sVERBOSE__
+		//printf("Computing solution for group %d (size:%ld) ...\n", g, robot_Groups[g].size());
 #endif
 		if (group_optimal_Solutions[g].is_Null())
 		{
@@ -15766,9 +15766,9 @@ namespace sReloc
 		    }
 		    group_optimal_Solutions[g] = group_optimal_solution;
 			
-#ifdef sVERBOSE
-		    printf("Computed group solution cost: %d\n", group_optimal_cost);
-		    group_optimal_solution.to_Screen();
+#ifdef sVERBOSE__
+		    //printf("Computed group solution cost: %d\n", group_optimal_cost);
+		    //group_optimal_solution.to_Screen();
 #endif
 		    finish_seconds = sGet_CPU_Seconds();
 
@@ -15779,8 +15779,8 @@ namespace sReloc
 		}
 	    }
 
-#ifdef sVERBOSE
-	    print_RobotGroups(robot_Groups);
+#ifdef sVERBOSE__
+	    //print_RobotGroups(robot_Groups);
 #endif
 
 	    AdjacencyMatrix_vector adjacency_Matrix;
@@ -15790,25 +15790,25 @@ namespace sReloc
 	    {
 		for (int gB = gA + 1; gB < robot_Groups.size(); ++gB)
 		{
-#ifdef sVERBOSE
-		    printf("Checking dependence between groups: %d x %d\n", gA, gB);
-		    group_optimal_Solutions[gA].to_Screen();
-		    group_optimal_Solutions[gB].to_Screen();
+#ifdef sVERBOSE__
+		    //printf("Checking dependence between groups: %d x %d\n", gA, gB);
+		    //group_optimal_Solutions[gA].to_Screen();
+		    //group_optimal_Solutions[gB].to_Screen();
 #endif
 		    bool dependent = check_GroupDependence(group_start_Arrangements[gA],
 							   group_start_Arrangements[gB],
 							   group_optimal_Solutions[gA],
 							   group_optimal_Solutions[gB]);
 
-#ifdef sVERBOSE
-		    if (dependent)
+#ifdef sVERBOSE__
+		    /*if (dependent)
 		    {
 			printf("----> Groups DEPENDENT\n");
 		    }
 		    else
 		    {
 			printf("----> Groups INDEPENDENT\n");
-		    }
+		    }*/
 #endif
 		    if (dependent)
 		    {
@@ -15824,8 +15824,8 @@ namespace sReloc
 					merged_group_optimal_Solutions);
 	    sASSERT(check_RobotGroups(N_Robots, merged_robot_Groups));
 
-#ifdef sVERBOSE
-	    print_RobotGroups(merged_robot_Groups);
+#ifdef sVERBOSE__
+	    //print_RobotGroups(merged_robot_Groups);
 #endif
 
 	    robot_Groups = merged_robot_Groups;
@@ -15835,8 +15835,8 @@ namespace sReloc
 
 	merge_GroupRobotSolutions(robot_Groups, group_optimal_Solutions, optimal_solution);
 	
-	optimal_solution.to_Screen();
-	print_RobotGroups(robot_Groups);
+	//optimal_solution.to_Screen();
+	//print_RobotGroups(robot_Groups);
 
 	sMultirobotSolutionAnalyzer solution_analyzer;
 	sUndirectedGraph environment_copy(environment);
@@ -15930,7 +15930,7 @@ namespace sReloc
 	    group_final_Arrangements.pop_back();
 	    	
 
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 	    {
 		print_RobotGroups(robot_Groups);
 	    }
@@ -16110,7 +16110,7 @@ namespace sReloc
 	    group_final_Arrangements.pop_back();
 	    	
 
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 	    {
 		print_RobotGroups(robot_Groups);
 	    }
@@ -16279,7 +16279,7 @@ namespace sReloc
 	    group_final_Arrangements.pop_back();
 	    	
 
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 	    {
 		print_RobotGroups(robot_Groups);
 	    }
@@ -16447,7 +16447,7 @@ namespace sReloc
 	    group_final_Arrangements.pop_back();
 	    	
 
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 	    {
 		print_RobotGroups(robot_Groups);
 	    }
@@ -16584,7 +16584,7 @@ namespace sReloc
 	    
 	    for (int g = 0; g < robot_Groups.size(); ++g)
 	    {
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 		{
 		    printf("Initiating instance for group %d\n", g);
 		}
@@ -16604,7 +16604,7 @@ namespace sReloc
 		group_start_Arrangements.push_back(group_start_arrangement);
 		group_final_Arrangements.push_back(group_final_arrangement);
 
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 		{
 		    printf("Computing solution for group %d (size:%ld) ...\n", g, robot_Groups[g].size());
 		}
@@ -16646,7 +16646,7 @@ namespace sReloc
 		    group_optimal_Solutions[g] = group_optimal_solution;
 		    group_optimal_Costs[g] = group_optimal_cost;
 			
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 		    {
 			printf("Computed group solution cost: %d\n", group_optimal_cost);
 		    }
@@ -16688,7 +16688,7 @@ namespace sReloc
 	    group_start_Arrangements = sort_group_start_Arrangements;
 	    group_final_Arrangements = sort_group_final_Arrangements;
 	    		     
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 	    print_RobotGroups(robot_Groups);
 #endif	    
 	    merged = false;
@@ -16702,7 +16702,7 @@ namespace sReloc
 							   group_optimal_Solutions[gA],
 							   group_optimal_Solutions[gB]);
 
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 		    if (dependent)
 		    {
 			printf("----> Groups DEPENDENT\n");
@@ -16822,7 +16822,7 @@ namespace sReloc
 	    
 	    for (int g = 0; g < robot_Groups.size(); ++g)
 	    {
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 		{
 		    printf("Initiating instance for group %d\n", g);
 		}
@@ -16842,7 +16842,7 @@ namespace sReloc
 		group_start_Arrangements.push_back(group_start_arrangement);
 		group_final_Arrangements.push_back(group_final_arrangement);
 
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 		{
 		    printf("Computing solution for group %d (size:%ld) ...\n", g, robot_Groups[g].size());
 		}
@@ -16885,7 +16885,7 @@ namespace sReloc
 		    group_optimal_Solutions[g] = group_optimal_solution;
 		    group_optimal_Costs[g] = group_optimal_cost;
 			
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 		    {
 			printf("Computed group solution cost: %d\n", group_optimal_cost);
 		    }
@@ -16927,7 +16927,7 @@ namespace sReloc
 	    group_start_Arrangements = sort_group_start_Arrangements;
 	    group_final_Arrangements = sort_group_final_Arrangements;
 	    		     
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 	    print_RobotGroups(robot_Groups);
 #endif	    
 	    merged = false;
@@ -16941,7 +16941,7 @@ namespace sReloc
 							   group_optimal_Solutions[gA],
 							   group_optimal_Solutions[gB]);
 
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 		    if (dependent)
 		    {
 			printf("----> Groups DEPENDENT\n");
@@ -17056,7 +17056,7 @@ namespace sReloc
 	    
 	    for (int g = 0; g < robot_Groups.size(); ++g)
 	    {
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 		printf("Initiating instance for group %d\n", g);
 #endif
 
@@ -17074,7 +17074,7 @@ namespace sReloc
 		group_start_Arrangements.push_back(group_start_arrangement);
 		group_final_Arrangements.push_back(group_final_arrangement);
 
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 		printf("Computing solution for group %d (size:%ld) ...\n", g, robot_Groups[g].size());
 #endif
 		if (group_optimal_Solutions[g].is_Null())
@@ -17112,7 +17112,7 @@ namespace sReloc
 		    }
 		    group_optimal_Solutions[g] = group_optimal_solution;
 			
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 		    printf("Computed group solution cost: %d\n", group_optimal_cost);
 		    group_optimal_solution.to_Screen();
 #endif
@@ -17125,7 +17125,7 @@ namespace sReloc
 		}
 	    }
 
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 	    print_RobotGroups(robot_Groups);
 #endif	    
 	    AdjacencyMatrix_vector adjacency_Matrix;
@@ -17135,7 +17135,7 @@ namespace sReloc
 	    {
 		for (int gB = gA + 1; gB < robot_Groups.size(); ++gB)
 		{
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 		    printf("Checking dependence between groups: %d x %d\n", gA, gB);
 		    group_optimal_Solutions[gA].to_Screen();
 		    group_optimal_Solutions[gB].to_Screen();
@@ -17145,7 +17145,7 @@ namespace sReloc
 							   group_optimal_Solutions[gA],
 							   group_optimal_Solutions[gB]);
 
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 		    if (dependent)
 		    {
 			printf("----> Groups DEPENDENT\n");
@@ -17168,7 +17168,7 @@ namespace sReloc
 					merged_robot_Groups,
 					merged_group_optimal_Solutions);
 
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 	    print_RobotGroups(merged_robot_Groups);
 #endif
 
@@ -17223,7 +17223,7 @@ namespace sReloc
 	    
 	    for (int g = 0; g < robot_Groups.size(); ++g)
 	    {
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 		printf("Initiating instance for group %d\n", g);
 #endif
 
@@ -17241,7 +17241,7 @@ namespace sReloc
 		group_start_Arrangements.push_back(group_start_arrangement);
 		group_final_Arrangements.push_back(group_final_arrangement);
 
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 		printf("Computing solution for group %d (size:%ld) ...\n", g, robot_Groups[g].size());
 #endif
 		if (group_optimal_Solutions[g].is_Null())
@@ -17280,7 +17280,7 @@ namespace sReloc
 		    }
 		    group_optimal_Solutions[g] = group_optimal_solution;
 			
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 		    printf("Computed group solution cost: %d\n", group_optimal_cost);
 		    group_optimal_solution.to_Screen();
 #endif
@@ -17293,7 +17293,7 @@ namespace sReloc
 		}
 	    }
 
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 	    print_RobotGroups(robot_Groups);
 #endif	    
 	    AdjacencyMatrix_vector adjacency_Matrix;
@@ -17303,7 +17303,7 @@ namespace sReloc
 	    {
 		for (int gB = gA + 1; gB < robot_Groups.size(); ++gB)
 		{
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 		    printf("Checking dependence between groups: %d x %d\n", gA, gB);
 		    group_optimal_Solutions[gA].to_Screen();
 		    group_optimal_Solutions[gB].to_Screen();
@@ -17313,7 +17313,7 @@ namespace sReloc
 							   group_optimal_Solutions[gA],
 							   group_optimal_Solutions[gB]);
 
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 		    if (dependent)
 		    {
 			printf("----> Groups DEPENDENT\n");
@@ -17336,7 +17336,7 @@ namespace sReloc
 					merged_robot_Groups,
 					merged_group_optimal_Solutions);
 
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 	    print_RobotGroups(merged_robot_Groups);
 #endif
 
@@ -17394,7 +17394,7 @@ namespace sReloc
 	    
 	    for (int g = 0; g < robot_Groups.size(); ++g)
 	    {
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 		{
 		    printf("Initiating instance for group %d\n", g);
 		}
@@ -17414,7 +17414,7 @@ namespace sReloc
 		group_start_Arrangements.push_back(group_start_arrangement);
 		group_final_Arrangements.push_back(group_final_arrangement);
 
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 		{
 		    printf("Computing solution for group %d (size:%ld) ...\n", g, robot_Groups[g].size());
 		}
@@ -17455,7 +17455,7 @@ namespace sReloc
 		    }
 		    group_optimal_Solutions[g] = group_optimal_solution;
 		    group_optimal_Makespans[g] = group_optimal_solution.get_StepCount();
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 		    {
 			printf("Computed group solution makespan: %d\n", group_optimal_makespan);
 		    }
@@ -17497,7 +17497,7 @@ namespace sReloc
 	    group_start_Arrangements = sort_group_start_Arrangements;
 	    group_final_Arrangements = sort_group_final_Arrangements;
 	    		     
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 	    print_RobotGroups(robot_Groups);
 #endif	    
 	    merged = false;
@@ -17511,7 +17511,7 @@ namespace sReloc
 							   group_optimal_Solutions[gA],
 							   group_optimal_Solutions[gB]);
 
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 		    if (dependent)
 		    {
 			printf("----> Groups DEPENDENT\n");
@@ -17627,7 +17627,7 @@ namespace sReloc
 	    
 	    for (int g = 0; g < robot_Groups.size(); ++g)
 	    {
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 		{
 		    printf("Initiating instance for group %d\n", g);
 		}
@@ -17647,7 +17647,7 @@ namespace sReloc
 		group_start_Arrangements.push_back(group_start_arrangement);
 		group_final_Arrangements.push_back(group_final_arrangement);
 
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 		{
 		    printf("Computing solution for group %d (size:%ld) ...\n", g, robot_Groups[g].size());
 		}
@@ -17689,7 +17689,7 @@ namespace sReloc
 		    }
 		    group_optimal_Solutions[g] = group_optimal_solution;
 		    group_optimal_Makespans[g] = group_optimal_solution.get_StepCount();
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 		    {
 			printf("Computed group solution makespan: %d\n", group_optimal_makespan);
 		    }
@@ -17731,7 +17731,7 @@ namespace sReloc
 	    group_start_Arrangements = sort_group_start_Arrangements;
 	    group_final_Arrangements = sort_group_final_Arrangements;
 	    		     
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 	    print_RobotGroups(robot_Groups);
 #endif	    
 	    merged = false;
@@ -17745,7 +17745,7 @@ namespace sReloc
 							   group_optimal_Solutions[gA],
 							   group_optimal_Solutions[gB]);
 
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 		    if (dependent)
 		    {
 			printf("----> Groups DEPENDENT\n");
@@ -18010,7 +18010,7 @@ namespace sReloc
 	{
 	    sMultirobotEncodingContext_CNFsat encoding_context(N_Layers);
 
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 	    printf("Solving layer %d ...\n", N_Layers);
 #endif
 	    
@@ -18238,7 +18238,7 @@ namespace sReloc
 	    
 	    sMultirobotEncodingContext_CNFsat encoding_context(N_Layers);
 
-#ifdef sVERBOSE
+#ifdef sVERBOSE__
 	    printf("Solving layer %d ...\n", N_Layers);
 #endif
 	    
@@ -20522,7 +20522,7 @@ namespace sReloc
 	    sub_solution = sMultirobotSolution(sub_solution, best_sub_solution);
 	    start_step = final_step_lower_bound;
 
-            #ifdef sVERBOSE
+            #ifdef sVERBOSE__
 	    {
 		if (thread_id != THREAD_ID_UNDEFINED)
 		{
@@ -20570,7 +20570,7 @@ namespace sReloc
 	}
         #endif
 
-	#ifdef sVERBOSE
+	#ifdef sVERBOSE__
 	{
 	    printf("Solution shortening(mt) commenced ...\n");
 	}
@@ -20647,7 +20647,7 @@ namespace sReloc
 	    shortened_solution = sMultirobotSolution(shortened_solution, sub_solution);
 	}
 
-	#ifdef sVERBOSE
+	#ifdef sVERBOSE__
 	{
 	    printf("Solution shortening(mt) finished\n");
 	}
@@ -20797,7 +20797,7 @@ namespace sReloc
 	    }
 	    #endif
 
-            #ifdef sVERBOSE
+            #ifdef sVERBOSE__
 	    {
 		if (thread_id != THREAD_ID_UNDEFINED)
 		{
@@ -20851,7 +20851,7 @@ namespace sReloc
 	}
         #endif
 
-	#ifdef sVERBOSE
+	#ifdef sVERBOSE__
 	{
 	    printf("Solution shortening(mt) commenced ...\n");
 	}
@@ -20942,7 +20942,7 @@ namespace sReloc
 	    shortened_solution = sMultirobotSolution(shortened_solution, sub_solution);
 	}
 
-	#ifdef sVERBOSE
+	#ifdef sVERBOSE__
 	{
 	    printf("Solution prime shortening(mt) finished\n");
 	}
@@ -20970,7 +20970,7 @@ namespace sReloc
 	}
         #endif
 
-	#ifdef sVERBOSE
+	#ifdef sVERBOSE__
 	{
 	    printf("Solution shortening(mt) commenced ...\n");
 	}
@@ -21125,7 +21125,7 @@ namespace sReloc
 	shortened_solution = sMultirobotSolution(shortened_solution, final_original_part);
 	shortened_solution.remove_EmptySteps();
 
-	#ifdef sVERBOSE
+	#ifdef sVERBOSE__
 	{
 	    printf("Solution prime shortening(mt) finished\n");
 	}
@@ -21157,7 +21157,7 @@ namespace sReloc
 	}
         #endif
 
-	#ifdef sVERBOSE
+	#ifdef sVERBOSE__
 	static int pass_cnt;
 	pass_cnt = 1;
 	{
@@ -21170,7 +21170,7 @@ namespace sReloc
 
 	while (true)
 	{
-            #ifdef sVERBOSE
+            #ifdef sVERBOSE__
 	    {
 		printf("Solution shortening pass %d ...\n", pass_cnt);
 		++pass_cnt;
@@ -21184,7 +21184,7 @@ namespace sReloc
 		return result;
 	    }
 
-	    #ifdef sVERBOSE
+	    #ifdef sVERBOSE__
 	    {
 		printf("Solution shortening pass %d finished with ratio %.2f%%\n", pass_cnt, 100 * ((double)next_solution.get_StepCount() / previous_solution.get_StepCount()));
 		printf("Intermediate statistics:\n");
@@ -21218,7 +21218,7 @@ namespace sReloc
 	    previous_solution = next_solution;
 	}
 
-	#ifdef sVERBOSE
+	#ifdef sVERBOSE__
 	{
 	    printf("Solution optimization finished with ratio %.2f%%\n", 100 * ((double)optimized_solution.get_StepCount() / original_solution.get_StepCount()));
 	}
@@ -21250,7 +21250,7 @@ namespace sReloc
 	}
         #endif
 
-	#ifdef sVERBOSE
+	#ifdef sVERBOSE__
 	static int pass_cnt;
 	pass_cnt = 0;
 	{
@@ -21263,7 +21263,7 @@ namespace sReloc
 
 	while (true)
 	{
-            #ifdef sVERBOSE
+            #ifdef sVERBOSE__
 	    {
 		printf("Solution shortening(mt) pass %d ...\n", ++pass_cnt);
 	    }
@@ -21276,7 +21276,7 @@ namespace sReloc
 		return result;
 	    }
 
-	    #ifdef sVERBOSE
+	    #ifdef sVERBOSE__
 	    {
 		printf("Solution shortening pass %d finished with ratio %.2f%%\n", pass_cnt, 100 * ((double)next_solution.get_StepCount() / previous_solution.get_StepCount()));
 		printf("Intermediate statistics:\n");
@@ -21310,7 +21310,7 @@ namespace sReloc
 	    previous_solution = next_solution;
 	}
 
-	#ifdef sVERBOSE
+	#ifdef sVERBOSE__
 	{
 	    printf("Solution optimization finished with ratio %.2f%%\n", 100 * ((double)optimized_solution.get_StepCount() / original_solution.get_StepCount()));
 	}
@@ -21342,7 +21342,7 @@ namespace sReloc
 	}
         #endif
 
-	#ifdef sVERBOSE
+	#ifdef sVERBOSE__
 	static int pass_cnt;
 	pass_cnt = 1;
 	{
@@ -21355,7 +21355,7 @@ namespace sReloc
 
 	while (true)
 	{
-            #ifdef sVERBOSE
+            #ifdef sVERBOSE__
 	    {
 		printf("Solution prime shortening pass %d ...\n", pass_cnt);
 		++pass_cnt;
@@ -21369,7 +21369,7 @@ namespace sReloc
 		return result;
 	    }
 
-	    #ifdef sVERBOSE
+	    #ifdef sVERBOSE__
 	    {
 		printf("Solution prime shortening pass %d finished with ratio %.2f%%\n", pass_cnt, 100 * ((double)next_solution.get_StepCount() / previous_solution.get_StepCount()));
 		printf("Intermediate statistics:\n");
@@ -21403,7 +21403,7 @@ namespace sReloc
 	    previous_solution = next_solution;
 	}
 
-	#ifdef sVERBOSE
+	#ifdef sVERBOSE__
 	{
 	    printf("Solution prime optimization finished with ratio %.2f%%\n", 100 * ((double)optimized_solution.get_StepCount() / original_solution.get_StepCount()));
 	}
@@ -21435,7 +21435,7 @@ namespace sReloc
 	}
         #endif
 
-	#ifdef sVERBOSE
+	#ifdef sVERBOSE__
 	static int pass_cnt;
 	pass_cnt = 0;
 	{
@@ -21448,7 +21448,7 @@ namespace sReloc
 
 	while (true)
 	{
-            #ifdef sVERBOSE
+            #ifdef sVERBOSE__
 	    {
 		printf("Solution prime shortening(mt) pass %d ...\n", ++pass_cnt);
 	    }
@@ -21461,7 +21461,7 @@ namespace sReloc
 		return result;
 	    }
 
-	    #ifdef sVERBOSE
+	    #ifdef sVERBOSE__
 	    {
 		printf("Solution prime shortening pass %d finished with ratio %.2f%%\n", pass_cnt, 100 * ((double)next_solution.get_StepCount() / previous_solution.get_StepCount()));
 		printf("Intermediate statistics:\n");
@@ -21496,7 +21496,7 @@ namespace sReloc
 	    previous_solution = next_solution;
 	}
 
-	#ifdef sVERBOSE
+	#ifdef sVERBOSE__
 	{
 	    printf("Solution prime optimization finished with ratio %.2f%%\n", 100 * ((double)optimized_solution.get_StepCount() / original_solution.get_StepCount()));
 	}
@@ -21837,7 +21837,7 @@ namespace sReloc
     {
 	sMultirobotSolutionCompressor::ProcessingArgument &processing_argument = *reinterpret_cast<sMultirobotSolutionCompressor::ProcessingArgument*>(arg);
 
-        #ifdef sVERBOSE
+        #ifdef sVERBOSE__
 	{
 	    printf("Thread %d started ...\n", processing_argument.m_ctx_arg.m_thread_id);
         }
@@ -21855,7 +21855,7 @@ namespace sReloc
 	}
 	processing_argument.m_out_arg.m_result = sRESULT_SUCCESS;
 
-        #ifdef sVERBOSE
+        #ifdef sVERBOSE__
 	{
 	    printf("Thread %d finished with ratio %.2f%%\n",
 		   processing_argument.m_ctx_arg.m_thread_id,
@@ -21871,7 +21871,7 @@ namespace sReloc
     {
 	sMultirobotSolutionCompressor::ProcessingArgument &processing_argument = *reinterpret_cast<sMultirobotSolutionCompressor::ProcessingArgument*>(arg);
 
-        #ifdef sVERBOSE
+        #ifdef sVERBOSE__
 	{
 	    printf("Thread %d started ...\n", processing_argument.m_ctx_arg.m_thread_id);
         }
@@ -21889,7 +21889,7 @@ namespace sReloc
 	}
 	processing_argument.m_out_arg.m_result = sRESULT_SUCCESS;
 
-        #ifdef sVERBOSE
+        #ifdef sVERBOSE__
 	{
 	    printf("Thread %d finished with ratio %.2f%%\n",
 		   processing_argument.m_ctx_arg.m_thread_id,
