@@ -21,7 +21,7 @@
 #include "config.h"
 #include "defs.h"
 #include "hierarch.h"
-#include "compile.h"
+#include "reLoc_compile.h"
 
 #include "hierarch_test.h"
 

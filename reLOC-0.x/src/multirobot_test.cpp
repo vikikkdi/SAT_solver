@@ -19,7 +19,7 @@
 #include <stdlib.h>
 
 #include "config.h"
-#include "compile.h"
+#include "reLoc_compile.h"
 #include "defs.h"
 #include "multirobot.h"
 #include "statistics.h"

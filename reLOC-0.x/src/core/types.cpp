@@ -17,7 +17,7 @@
 
 
 #include "config.h"
-#include "compile.h"
+#include "reLoc_compile.h"
 #include "types.h"
 #include "defs.h"
 

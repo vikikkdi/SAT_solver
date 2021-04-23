@@ -22,7 +22,7 @@
 #include <algorithm>
 
 #include "config.h"
-#include "compile.h"
+#include "reLoc_compile.h"
 #include "defs.h"
 #include "result.h"
 #include "reloc.h"

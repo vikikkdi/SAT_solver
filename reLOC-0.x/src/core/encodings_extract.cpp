@@ -25,7 +25,7 @@
 #include <map>
 
 #include "config.h"
-#include "compile.h"
+#include "reLoc_compile.h"
 #include "version.h"
 #include "defs.h"
 #include "types.h"

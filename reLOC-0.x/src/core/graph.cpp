@@ -17,7 +17,7 @@
 #ifndef __GRAPH_CPP__
 #define __GRAPH_CPP__
 #include "config.h"
-#include "compile.h"
+#include "reLoc_compile.h"
 #include "defs.h"
 #include "reloc.h"
 #include "types.h"

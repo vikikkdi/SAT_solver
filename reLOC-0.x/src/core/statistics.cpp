@@ -23,7 +23,7 @@
 #include <sys/times.h>
 
 #include "config.h"
-#include "compile.h"
+#include "reLoc_compile.h"
 #include "statistics.h"
 #include "compress.h"
 

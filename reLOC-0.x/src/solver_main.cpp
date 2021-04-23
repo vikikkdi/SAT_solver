@@ -25,7 +25,7 @@
 #include <unistd.h>
 
 #include "config.h"
-#include "compile.h"
+#include "reLoc_compile.h"
 #include "complete.h"
 #include "defs.h"
 #include "reloc.h"
